@@ -1,0 +1,70 @@
+Report on the Modeling Process of Three Recommendation Algorithms
+
+This report details the modeling process, including data preprocessing, implementation, and performance evaluation of three recommendation algorithms: Collaborative Filtering, Content-Based Filtering, and a Hybrid Model.
+
+1. Collaborative Filtering
+
+Data Preparation:
+-User-Item Interaction Matrix: 
+  - Created by pivoting the dataset where rows represent users, columns represent items (movies), and values represent ratings.
+
+Model Implementation:
+- Matrix Factorization (Using TensorFlow):
+  - Variables: Initialized latent features for users (`W`) and items (`X`) and bias term (`b`).
+  - Optimization: Used Adam optimizer to minimize the loss function.
+  - Regularization: Applied L2 regularization to prevent overfitting.
+  - Training: Implemented K-Fold cross-validation to ensure robustness and generalization.
+
+Performance Metrics:
+- Average R² Score across folds:0.8011
+- Average RMSE across folds:0.5043
+- Average MAE across folds:0.3623
+
+Interpretation:
+- The model explains 80.11% of the variance in the ratings, showing strong predictive power. The RMSE and MAE values are reasonably low, reflecting accurate predictions.
+
+---
+
+2.Content-Based Filtering
+
+Data Preparation:
+- Feature Extraction: 
+  - Extracted features from items, including genres and release year.
+  - Encoded categorical features (e.g., genres) and normalized numerical features (e.g., release year).
+
+Model Implementation:
+- Cosine Similarity:
+  - Computed similarity between items based on their features.
+- User Profile:
+  - Constructed user profiles based on the items they have interacted with.
+
+Performance Metrics:
+- R² Score:-0.0322
+- RMSE:1.1502
+- MAE:0.8751
+
+Interpretation:
+- The content-based model performed poorly, indicated by a negative R² score and high RMSE and MAE values. This suggests the model struggles to capture the variance in the ratings and makes inaccurate predictions.
+
+---
+
+3.Hybrid Model
+
+Data Preparation:
+- Combining Features:
+  - Integrated the collaborative and content-based features.
+- Matrix Factorization and Cosine Similarity:
+  - Performed SVD for collaborative filtering and computed cosine similarity for content-based filtering.
+
+Model Implementation:
+- Weighted Hybrid Approach:
+  - Combined predictions from both models using a weighted sum.
+
+Performance Metrics:
+- Hybrid R² Score:-1.9384
+- **Hybrid RMSE:1.9408
+- **Hybrid MAE:1.6931
+
+Interpretation:
+- The hybrid model exhibited significant issues, as indicated by the highly negative R² score and high error metrics. This suggests a problem with the integration and weighting of the two models.
+
