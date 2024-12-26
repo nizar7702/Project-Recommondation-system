@@ -4,25 +4,25 @@ Introduction
 In this report, we evaluate three different recommendation models: Baysed Personalized Ranking (Collaborative Filtering), BPR with Hyperparameters Tuning, and Content-Based Filtering. The evaluation is based on key metrics such as Precision@K, Recall@K, and F1-score@K to determine the effectiveness of each model in providing relevant recommendations.
 
 Evaluation Metrics
-- **Precision@K:** Measures the accuracy of the top K recommendations.
-- **Recall@K:** Measures the model's ability to capture relevant items within the top K recommendations.
-- **F1-score@K:** The harmonic mean of precision and recall, providing a balanced evaluation of the model's performance.
+- Precision@K: Measures the accuracy of the top K recommendations.
+- Recall@K: Measures the model's ability to capture relevant items within the top K recommendations.
+- F1-score@K: The harmonic mean of precision and recall, providing a balanced evaluation of the model's performance.
 
 Model Results
 1. Baysed Personalized Ranking (Collaborative Filtering)
-- **Precision@K:** 0.359873
-- **Recall@K:** 0.183517
-- **F1-score@K:** 0.243077
+- Precision@K: 0.359873
+- Recall@K: 0.183517
+- F1-score@K: 0.243077
 
 2. BPR with Hyperparameters Tuning
-- **Precision@K:** 0.495532
-- **Recall@K:** 0.327683
-- **F1-score@K:** 0.394495
+- Precision@K: 0.495532
+- Recall@K: 0.327683
+- F1-score@K: 0.394495
 
 3. Content-Based Filtering
-- **Precision@K:** 0.012561
-- **Recall@K:** 0.002339
-- **F1-score@K:** 0.003943
+- Precision@K: 0.012561
+- Recall@K: 0.002339
+- F1-score@K: 0.003943
 
 Interpretation of Results
 Baysed Personalized Ranking (Collaborative Filtering)
